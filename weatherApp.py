@@ -7,8 +7,15 @@ getCurrentMonth = str(datetime.datetime.now().month)
 getYesterday = str(datetime.datetime.now().day -1) 
 print(getCurrentYear,getCurrentMonth,getYesterday)
 
+
 getWeatherParse = requests.get("https://www.metaweather.com/api/location/2123260/"+getCurrentYear+"/"+getCurrentMonth+"/"+getYesterday+"/")
-weatherParametrList = (json.dumps(getWeatherParse.json(), sort_keys=True, indent=4))
+# Преобразование Response кода ответа в text
+getWeatherParse = getWeatherParse.text
+# Преобразование в Json
+getWeatherParse = json.loads(getWeatherParse)
+print(getWeatherParse[0])
+weatherParametrDict = getWeatherParse[0]
+print(weatherParametrDict['id'])
 
 
 
