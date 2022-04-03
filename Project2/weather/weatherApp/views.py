@@ -1,6 +1,5 @@
 from django.shortcuts import  render
 from weatherApp.models import Weather
-from weatherApp.serializers import WeatherSerializer
 import requests
 import json
 import datetime
