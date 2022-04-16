@@ -3,6 +3,7 @@ backports.zoneinfo==0.2.1
 certifi==2020.12.5
 chardet==4.0.0
 Django==4.0.3
+django-environ==0.8.1
 djangorestframework==3.13.1
 idna==2.10
 PyMySQL==1.0.2
