@@ -12,3 +12,5 @@ requests==2.25.1
 sqlparse==0.4.2
 tzdata==2022.1
 urllib3==1.26.4
+cryptography==3.4.7
+
