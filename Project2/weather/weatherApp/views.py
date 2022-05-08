@@ -4,18 +4,20 @@ import requests
 import json
 import datetime
 
-YESTERDAY = (datetime.datetime.now()- datetime.timedelta(days=1))
-YEAR_BEFORE = str((YESTERDAY.year) - 1)
-YEAR_CURRENT = str(YESTERDAY.year)
-MONTH = str(YESTERDAY.month)
-DAY = str(YESTERDAY.day)
-CITY_NAME = "St.Petersburg"
-HOST = "https://www.metaweather.com/api/location/2123260/"
-YEARS = [YEAR_CURRENT,YEAR_BEFORE]
+
 
 
 def WeatherViewSet(request):
     
+    YESTERDAY = (datetime.datetime.now()- datetime.timedelta(days=1))
+    YEAR_BEFORE = str((YESTERDAY.year) - 1)
+    YEAR_CURRENT = str(YESTERDAY.year)
+    MONTH = str(YESTERDAY.month)
+    DAY = str(YESTERDAY.day)
+    CITY_NAME = "St.Petersburg"
+    HOST = "https://www.metaweather.com/api/location/2123260/"
+    YEARS = [YEAR_CURRENT,YEAR_BEFORE]
+
     req1 = (json.loads((requests.get(HOST+YEAR_CURRENT+"/"+MONTH+"/"+DAY+"/")).text)[0])    
     req2 = (json.loads((requests.get(HOST+YEAR_BEFORE+"/"+MONTH+"/"+DAY+"/")).text)[0]) 
     req_data = Weather(
